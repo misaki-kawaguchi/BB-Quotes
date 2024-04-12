@@ -14,6 +14,7 @@
 		14FFACE02BC8AF0000AEC96E /* samplecharacter.json in Resources */ = {isa = PBXBuildFile; fileRef = 14FFACDF2BC8AEFF00AEC96E /* samplecharacter.json */; };
 		14FFACE22BC8B31900AEC96E /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FFACE12BC8B31900AEC96E /* Quote.swift */; };
 		14FFACE42BC8B36000AEC96E /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FFACE32BC8B36000AEC96E /* Character.swift */; };
+		14FFACE62BC8B8EA00AEC96E /* FetchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FFACE52BC8B8E900AEC96E /* FetchController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		14FFACDF2BC8AEFF00AEC96E /* samplecharacter.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = samplecharacter.json; sourceTree = "<group>"; };
 		14FFACE12BC8B31900AEC96E /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		14FFACE32BC8B36000AEC96E /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		14FFACE52BC8B8E900AEC96E /* FetchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			children = (
 				14FFACD12BC8AC8C00AEC96E /* BB_QuotesApp.swift */,
 				14FFACD32BC8AC8C00AEC96E /* ContentView.swift */,
+				14FFACE52BC8B8E900AEC96E /* FetchController.swift */,
 				14FFACE12BC8B31900AEC96E /* Quote.swift */,
 				14FFACE32BC8B36000AEC96E /* Character.swift */,
 				14FFACD52BC8AC8D00AEC96E /* Assets.xcassets */,
@@ -150,6 +153,7 @@
 				14FFACD42BC8AC8C00AEC96E /* ContentView.swift in Sources */,
 				14FFACE22BC8B31900AEC96E /* Quote.swift in Sources */,
 				14FFACD22BC8AC8C00AEC96E /* BB_QuotesApp.swift in Sources */,
+				14FFACE62BC8B8EA00AEC96E /* FetchController.swift in Sources */,
 				14FFACE42BC8B36000AEC96E /* Character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
