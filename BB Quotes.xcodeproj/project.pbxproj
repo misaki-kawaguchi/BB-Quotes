@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1463D6EA2BCA90F5004F5818 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463D6E92BCA90F5004F5818 /* ViewModel.swift */; };
 		14FFACD22BC8AC8C00AEC96E /* BB_QuotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FFACD12BC8AC8C00AEC96E /* BB_QuotesApp.swift */; };
 		14FFACD42BC8AC8C00AEC96E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FFACD32BC8AC8C00AEC96E /* ContentView.swift */; };
 		14FFACD62BC8AC8D00AEC96E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14FFACD52BC8AC8D00AEC96E /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1463D6E92BCA90F5004F5818 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		14FFACCE2BC8AC8C00AEC96E /* BB Quotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BB Quotes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14FFACD12BC8AC8C00AEC96E /* BB_QuotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BB_QuotesApp.swift; sourceTree = "<group>"; };
 		14FFACD32BC8AC8C00AEC96E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			children = (
 				14FFACD12BC8AC8C00AEC96E /* BB_QuotesApp.swift */,
 				14FFACD32BC8AC8C00AEC96E /* ContentView.swift */,
+				1463D6E92BCA90F5004F5818 /* ViewModel.swift */,
 				14FFACE52BC8B8E900AEC96E /* FetchController.swift */,
 				14FFACE12BC8B31900AEC96E /* Quote.swift */,
 				14FFACE32BC8B36000AEC96E /* Character.swift */,
@@ -159,6 +162,7 @@
 				14FFACE62BC8B8EA00AEC96E /* FetchController.swift in Sources */,
 				14FFACE42BC8B36000AEC96E /* Character.swift in Sources */,
 				14FFACE82BC8C6E600AEC96E /* Constants.swift in Sources */,
+				1463D6EA2BCA90F5004F5818 /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
