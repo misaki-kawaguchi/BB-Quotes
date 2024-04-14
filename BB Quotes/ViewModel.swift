@@ -26,8 +26,8 @@ class ViewModel: ObservableObject {
     private let controller: FetchController
     
     // FetchController（外部データソースからデータを取得する役割を担う）型のインスタンスを受け取りこれを用いてデータの取得を行う
-    init(anything: FetchController) {
-        self.controller = anything
+    init(controller: FetchController) {
+        self.controller = controller
     }
     
     func getData(for show: String) async {
