@@ -15,7 +15,7 @@ struct QuoteView: View {
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                Image(show.lowercased().filter {$0 != " "})
+                Image(show.lowerNoSpaces)
                     .resizable()
                     .frame(
                         width: geo.size.width * 2.7,
@@ -75,9 +75,9 @@ struct QuoteView: View {
                             .font(.title)
                             .foregroundColor(.white)
                             .padding()
-                            .background(.breakingBadGreen)
+                            .background(Color("\(show.noSpaces)Button"))
                             .cornerRadius(7)
-                            .shadow(color: .breakingBadYellow, radius: 2)
+                            .shadow(color:Color("\(show.noSpaces)Shadow"), radius: 2)
                     }
                     
                     Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
@@ -94,6 +94,6 @@ struct QuoteView: View {
 }
 
 #Preview {
-    QuoteView(show: "Breaking Bad")
+    QuoteView(show: Constants.bcsName)
         .preferredColorScheme(.dark)
 }
