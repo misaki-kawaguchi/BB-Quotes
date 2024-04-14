@@ -42,8 +42,12 @@ struct QuoteView: View {
                             } placeholder: {
                                 ProgressView()
                             }
+                            .frame(
+                                width: geo.size.width / 1.1,
+                                height: geo.size.height / 1.8
+                            )
                             
-                            Text("Jesse Pinkman")
+                            Text("\(data.quote.character)")
                                 .foregroundColor(.white)
                                 .padding(10)
                                 .frame(maxWidth: .infinity)
