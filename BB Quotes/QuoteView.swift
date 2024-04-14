@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct QuoteView: View {
+    @StateObject private var viewModel = ViewModel(controller: FetchController())
+    
     var body: some View {
         GeometryReader { geo in
             ZStack {
@@ -20,31 +22,40 @@ struct QuoteView: View {
                 VStack {
                     Spacer(minLength: 120)
                     
-                    Text("\"You either run from things, or you face them, Mr. White.\"")
-                        .minimumScaleFactor(0.5)
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(.black.opacity(0.5))
-                        .cornerRadius(25)
-                        .padding(.horizontal)
-                    
-                    ZStack(alignment: .bottom) {
-                        Image(.jessepinkman)
-                            .resizable()
-                            .scaledToFill()
-                        
-                        Text("Jesse Pinkman")
+                    switch viewModel.status {
+                    case .success(let data) :
+                        Text("\"You either run from things, or you face them, Mr. White.\"")
+                            .minimumScaleFactor(0.5)
+                            .multilineTextAlignment(.center)
                             .foregroundColor(.white)
-                            .padding(10)
-                            .frame(maxWidth: .infinity)
-                            .background(.ultraThinMaterial)
+                            .padding()
+                            .background(.black.opacity(0.5))
+                            .cornerRadius(25)
+                            .padding(.horizontal)
+                        
+                        ZStack(alignment: .bottom) {
+                            Image(.jessepinkman)
+                                .resizable()
+                                .scaledToFill()
+                            
+                            Text("Jesse Pinkman")
+                                .foregroundColor(.white)
+                                .padding(10)
+                                .frame(maxWidth: .infinity)
+                                .background(.ultraThinMaterial)
+                        }
+                        .frame(
+                            width: geo.size.width / 1.1,
+                            height: geo.size.height / 1.8
+                        )
+                        .cornerRadius(80)
+                        
+                    case .fetching:
+                        ProgressView()
+                        
+                    default:
+                        EmptyView()
                     }
-                    .frame(
-                        width: geo.size.width / 1.1,
-                        height: geo.size.height / 1.8
-                    )
-                    .cornerRadius(80)
                     
                     Button {
                         
