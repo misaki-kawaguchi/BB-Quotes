@@ -10,10 +10,12 @@ import SwiftUI
 struct QuoteView: View {
     @StateObject private var viewModel = ViewModel(controller: FetchController())
     
+    let show: String
+    
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                Image(.breakingbad)
+                Image(show.lowercased().filter {$0 != " "})
                     .resizable()
                     .frame(
                         width: geo.size.width * 2.7,
@@ -24,7 +26,7 @@ struct QuoteView: View {
                     
                     switch viewModel.status {
                     case .success(let data) :
-                        Text("\"You either run from things, or you face them, Mr. White.\"")
+                        Text("\"\(data.quote.quote)\"")
                             .minimumScaleFactor(0.5)
                             .multilineTextAlignment(.center)
                             .foregroundColor(.white)
@@ -34,9 +36,12 @@ struct QuoteView: View {
                             .padding(.horizontal)
                         
                         ZStack(alignment: .bottom) {
-                            Image(.jessepinkman)
-                                .resizable()
-                                .scaledToFill()
+                            AsyncImage(url: data.character.images[0]) { image in
+                                image.resizable()
+                                    .scaledToFill()
+                            } placeholder: {
+                                ProgressView()
+                            }
                             
                             Text("Jesse Pinkman")
                                 .foregroundColor(.white)
@@ -58,7 +63,9 @@ struct QuoteView: View {
                     }
                     
                     Button {
-                        
+                        Task {
+                            await viewModel.getData(for: show)
+                        }
                     } label: {
                         Text("Get Random Quote")
                             .font(.title)
@@ -83,6 +90,6 @@ struct QuoteView: View {
 }
 
 #Preview {
-    QuoteView()
+    QuoteView(show: "Breaking Bad")
         .preferredColorScheme(.dark)
 }
